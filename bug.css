@@ -1,0 +1,16 @@
+The following CSS code snippet demonstrates an uncommon error related to the specificity of CSS selectors and the cascade.  The expected outcome is that both the `h1` and the `p` elements would be styled.  However, only the `p` element receives the styling. This is due to the unexpected behavior of the `!important` flag when used in conjunction with the cascade. Although !important has a higher precedence, the id selector is of higher specificity than the !important declaration.  This subtlety can lead to unexpected behavior if not fully understood.
+
+```css
+#my-id h1 {
+  color: blue;
+}
+
+p {
+  color: red !important;
+}
+
+#my-id p {
+    color: green;
+}
+
+```
