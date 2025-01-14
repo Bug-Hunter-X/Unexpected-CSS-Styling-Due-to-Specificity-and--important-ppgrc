@@ -1,0 +1,28 @@
+The solution involves understanding CSS specificity and adjusting selectors. The `!important` declaration should be used sparingly and only when absolutely necessary.
+
+One approach is to use a more specific selector to target the `p` element directly, overriding the more general style. Another is to remove the `!important` from the `p` element's style and adjust the specificity of the conflicting selectors by adding classes or more specific selectors for each element, ensuring better organization of CSS styles.
+
+Here's the corrected code:
+
+```css
+#my-id h1 {
+  color: blue;
+}
+
+#my-id p {
+  color: green;
+}
+
+.my-paragraph {
+  color: red;
+}
+```
+
+```html
+<div id="my-id">
+  <h1>This is a heading</h1>
+  <p class="my-paragraph">This is a paragraph</p>
+</div>
+```
+
+This revised code uses a class selector for the paragraph, resolving the specificity conflict.  This approach is generally preferred over excessive use of `!important`.
